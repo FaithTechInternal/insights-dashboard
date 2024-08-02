@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: faithtech_insights
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  server:
+    build: ./server
+    environment:
+      DATABASE_URL: postgresql://user:password@postgres:5432/faithtech_insights
+      GITHUB_TOKEN: your_github_token_here
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  client:
+    build: ./client
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+
+volumes:
+  postgres_data:

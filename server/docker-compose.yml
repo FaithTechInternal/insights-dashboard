@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: faithtech_user
+      POSTGRES_PASSWORD: faithtech_password
+      POSTGRES_DB: faithtech_insights
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U faithtech_user -d faithtech_insights"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
