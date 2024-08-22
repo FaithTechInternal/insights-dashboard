@@ -13,6 +13,10 @@ Other 4D cycle badges
 ![Demonstrate](https://badgen.net/badge/stage/demonstrate/green)
 -->
 
+<img width="960" alt="Screenshot 2024-08-22 at 12 36 14 AM" src="https://github.com/user-attachments/assets/c047860f-dc75-42d1-9861-c7e7101f320c">
+
+<img width="950" alt="Screenshot 2024-08-22 at 12 36 26 AM" src="https://github.com/user-attachments/assets/36eef5f8-1826-4798-98d4-684f87da3c75">
+
 Tech stack:
 
 - Server: [NestJS](https://nestjs.com/)
